@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temple (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2436759724723080008, guid: 0252519d7b0e34240ad4875bef1a52ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6920866957701115493, guid: 0252519d7b0e34240ad4875bef1a52ba, type: 3}
       propertyPath: m_RootOrder
       value: 4
