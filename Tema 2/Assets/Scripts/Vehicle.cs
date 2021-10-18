@@ -1,29 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    // Variable que guarda el sonido del vehiculo 
-    [SerializeField] private string sound = "¡Brum, brum!";
-
-    private int x = 3;
-    private int y = 6;
-
-    
-    
-    
+    // Variable que guarda el sonido del vehiculo
+    [SerializeField] private string sound = "Brum, brum";
+    // Variable que guarda el nombre del vehiculo
+    [SerializeField] private string name;
+    // Variable que guarda el num de ruedas
+    [SerializeField] private int numberWheels = 4;
     
     // Start is called before the first frame update
     void Start()
     {
-        x /= y;
+        Debug.Log($"{name} tiene {numberWheels} ruedas y hace {sound}");
     }
 
-    // Update is called once per frame
+// Update is called once per frame
     void Update()
     {
-        
+    
     }
 }
