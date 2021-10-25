@@ -16,16 +16,35 @@ public class MyFirstScript : MonoBehaviour
     public int playerAge = 35;
     public int x = 5;
     public int y = 2;
-    */
+    
     
     public bool isRaining;
     public bool isCold;
-    
+    */
+
+    public Vector3 myPos = new Vector3(2, 1, 0);
+    public string hello;
     
     
     
     void Start()
     {
+        HelloWorld();
+        
+        
+        
+        //hello = GetHello();
+        //Debug.Log(hello);
+        
+        Debug.Log(GetHello());
+
+        // myPos = new Vector3(2, 1, 0);
+        transform.position = myPos;
+        
+        //transform.position = Vector3.zero;
+        Debug.Log(transform.position);
+        
+        /*
         if (isRaining == true)
         {
             if (isCold == true)
@@ -49,7 +68,7 @@ public class MyFirstScript : MonoBehaviour
             }
         }
         
-        /*
+        
         if (x == 2 || y <= 5)
         {
             Debug.Log("Verdadero");
@@ -81,14 +100,78 @@ public class MyFirstScript : MonoBehaviour
             Debug.Log("Eres un bebe");
         }
         */
-        
-        
-        
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Debug.Log(transform.position);
         
+        // Muevo para la derecha si pulso tecla derecha 
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.position += Vector3.right;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.position += Vector3.left;
+            // transform.position += -1 * Vector3.right;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            transform.position += Vector3.up;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            transform.position += Vector3.down;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            transform.position += Vector3.forward;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            transform.position += Vector3.back;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.rotation *= Quaternion.Euler(0, 10, 0);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            transform.rotation *= Quaternion.Euler(0, -10, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.localScale += Vector3.right;
+        }
     }
+
+    public void HelloWorld()
+    {
+        Debug.Log("¡Hola, Mundo!");
+    }
+
+    public string GetHello()
+    {
+        return "¡Hola!"; 
+    }
+    
+    
+    
+    
+    
+    
+    
 }
