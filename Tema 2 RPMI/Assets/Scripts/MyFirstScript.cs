@@ -30,11 +30,17 @@ public class MyFirstScript : MonoBehaviour
 
     public int number1;
     public int number2;
+
+    public Vector3 initialPos = new Vector3(2, 1, 0);
     
     
     
     void Start()
     {
+        initialPos = Vector3.zero;
+        transform.position = initialPos;
+        
+        
         Debug.Log(Product(number1, number2));
         
         // HelloWorld();
