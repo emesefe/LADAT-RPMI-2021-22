@@ -308,8 +308,9 @@ GameObject:
   - component: {fileID: 1076017577}
   - component: {fileID: 1076017576}
   - component: {fileID: 1076017579}
+  - component: {fileID: 1076017580}
   m_Layer: 5
-  m_Name: Bisiesto
+  m_Name: Numero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,12 +447,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076017574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3104636c350af44c090c52cf73a6fbad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   year: 2016
+--- !u!114 &1076017580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076017574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328ac507c0d50407aa576b61ea841f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328919595
 GameObject:
   m_ObjectHideFlags: 0

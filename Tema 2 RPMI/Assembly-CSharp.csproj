@@ -55,6 +55,8 @@
      <Compile Include="Assets\Scripts\MyFirstScript.cs" />
      <Compile Include="Assets\Scripts\Vehicle.cs" />
      <Compile Include="Assets\Scripts\Bisiesto.cs" />
+     <Compile Include="Assets\Scripts\RandomNumber.cs" />
+     <Compile Include="Assets\Scripts\HotPotato.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.19f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
