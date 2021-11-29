@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput;
-    public float speed = 10f;
-    public float xRange = 16f;
+    private float horizontalInput;
+    private float speed = 10f;
+    private float xRange = 16f;
 
     public GameObject projectilePrefab;
-    
-    void Start()
-    {
-        
-    }
-    
+
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+        // Movimiento horizontal del player
         transform.Translate(Vector3.right * speed * Time.deltaTime * horizontalInput);
 
         // Límite de pantalla derecho

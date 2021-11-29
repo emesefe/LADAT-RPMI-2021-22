@@ -19,11 +19,11 @@ MonoBehaviour:
     width: 1024
     height: 587
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 0
+  m_Maximized: 1
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 69
+  controlID: 92
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -311,6 +311,7 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 110705384, guid: 022cd8e9b1d113b41905bcb401343e62, type: 2}
     - {fileID: 110772746, guid: fcb5ec06ce1a1d0468b35327576bb69a, type: 2}
+    - {fileID: 110700000, guid: 022cd8e9b1d113b41905bcb401343e62, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -344,11 +345,27 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: fcb5ec06ce1a1d0468b35327576bb69a,
+  m_AnimatorController: {fileID: 9100000, guid: 022cd8e9b1d113b41905bcb401343e62,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 110772746, guid: fcb5ec06ce1a1d0468b35327576bb69a, type: 2}
+  - m_Target: {fileID: 110700000, guid: 022cd8e9b1d113b41905bcb401343e62, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -426,23 +443,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/mariasantos/Developer/GitHub/LADAT-RPMI-2021-22/Proyecto
     2 - Gameplay RPMI
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 62}
-    m_SelectedIDs: 703f0000
-    m_LastClickedID: 16240
-    m_ExpandedIDs: 000000004e3f0000503f0000523f000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e8410000
+    m_LastClickedID: 16872
+    m_ExpandedIDs: 00000000c2410000c641000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -470,7 +487,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e3f0000503f0000523f0000
+    m_ExpandedIDs: 00000000c2410000c4410000c6410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -593,8 +610,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fa3c0000
-      m_LastClickedID: 15610
+      m_SelectedIDs: fe3c0000
+      m_LastClickedID: 15614
       m_ExpandedIDs: 52fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
