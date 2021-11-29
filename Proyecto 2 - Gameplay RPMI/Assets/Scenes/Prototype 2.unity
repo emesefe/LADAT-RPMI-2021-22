@@ -580,8 +580,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713ab1238bf7b47f2befee9bd2ad203f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalPrefab: {fileID: 9198858946074815468, guid: 80a94df6b70654e3dbb17ee943ecec03,
-    type: 3}
+  animalPrefabs:
+  - {fileID: 9198858946074815468, guid: 80a94df6b70654e3dbb17ee943ecec03, type: 3}
+  - {fileID: 3329814707460273442, guid: 8b82cf75b7c43415b9c01dc4150b2451, type: 3}
+  - {fileID: 4677323719274199699, guid: 9ff376c58b3044b5790be30f5f36ecba, type: 3}
   spawnPosition: {x: 0, y: 0, z: 25}
 --- !u!4 &1459969926
 Transform:
