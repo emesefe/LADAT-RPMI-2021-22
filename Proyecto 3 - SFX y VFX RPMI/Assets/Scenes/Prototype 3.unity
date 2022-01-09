@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09257951a44474e64ad73b1509bb9a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 145980, guid: 84a102c1bf03d0a43bd4b342185c2811, type: 3}
+  obstaclePrefab: {fileID: 145980, guid: 84a102c1bf03d0a43bd4b342185c2811, type: 3}
   startDelay: 2
   repeatRate: 2
 --- !u!4 &285150231
