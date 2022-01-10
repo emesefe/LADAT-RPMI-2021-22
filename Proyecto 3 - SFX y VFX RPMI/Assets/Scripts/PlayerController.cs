@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool gameOver;
+    
     private Rigidbody playerRigidbody;
     [SerializeField] private float jumpForce = 400f;
     public float gravityModifier = 1;
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        gameOver = false;
         playerRigidbody = GetComponent<Rigidbody>();
         // Modificamos la gravedad
         // * Con un valor igual a 1, la gravedad no se modifica
@@ -42,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if (otherCollider.gameObject.CompareTag("Obstacle"))
         {
-            // Morir
+            gameOver = true;
         }
         
         

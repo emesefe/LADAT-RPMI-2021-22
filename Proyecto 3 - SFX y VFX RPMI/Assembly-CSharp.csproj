@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\RepeatBackground.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\DestroyOutOfBounds.cs" />
+     <Compile Include="Assets\Scripts\DestroyAfterTime.cs" />
      <None Include="Assets\Course Library\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
      <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
  <Reference Include="UnityEngine">

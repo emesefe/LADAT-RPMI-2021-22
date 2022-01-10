@@ -5,10 +5,31 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    public float speed = 10f; 
+    public float speed = 10f;
+
+    private float xLim = -10f;
+
+    private PlayerController playerControllerScript;
+
+    void Start()
+    {
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
+    
     void Update()
     {
-        // Nos desplazamos constantemente a la izquierda
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+       if (!playerControllerScript.gameOver)
+        {
+            // Nos desplazamos constantemente a la izquierda
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+
+       /*
+       if (transform.position.x < xLim && gameObject.CompareTag("Obstacle"))
+       {
+           Destroy(gameObject);
+       }
+       */
+       
     }
 }

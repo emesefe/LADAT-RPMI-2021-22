@@ -9,15 +9,22 @@ public class SpawnManager : MonoBehaviour
     private Vector3 spawnPos = new Vector3(25, 0, 0);
     public float startDelay = 2f;
     public float repeatRate = 2f;
+
+    private PlayerController playerControllerScript;
     
     void Start()
     {
+        playerControllerScript = FindObjectOfType<PlayerController>();
+        
         // Spawneamos obstáculos cada cierto intervalo de tiempo
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
     }
 
     public void SpawnObstacle()
     {
-        Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+        if (!playerControllerScript.gameOver)
+        {
+            Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+        }
     }
 }
