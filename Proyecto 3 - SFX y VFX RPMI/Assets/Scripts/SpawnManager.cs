@@ -6,10 +6,12 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject obstaclePrefab;
+    
     private Vector3 spawnPos = new Vector3(25, 0, 0);
     public float startDelay = 2f;
     public float repeatRate = 2f;
 
+    // Necesitamos esta variable para poder comunicarnos con el script PlayerController
     private PlayerController playerControllerScript;
     
     void Start()
