@@ -10,13 +10,20 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem explosionParticleSystem;
     public ParticleSystem dirtParticleSystem;
+
+    public AudioClip jumpClip;
+    public AudioClip crashClip;
     
     private Rigidbody playerRigidbody;
     private Animator playerAnimator;
+    private AudioSource playerAudioSource;
+    private AudioSource cameraAudioSource;
     
     [SerializeField] private float jumpForce = 400f;
     public float gravityModifier = 1;
     private bool isOnTheGround = true; // Con esta variable evitaremos el doble salto
+
+    private int lives = 3; // Total de vidas
 
     void Start()
     {
@@ -26,6 +33,8 @@ public class PlayerController : MonoBehaviour
         // Accedemos a las componentes que necesitamos
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
+        playerAudioSource = GetComponent<AudioSource>();
+        cameraAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         
         // Modificamos la gravedad
         // * Con un valor igual a 1, la gravedad no se modifica
@@ -33,7 +42,9 @@ public class PlayerController : MonoBehaviour
         // * Con un valor menor a 1, la gravedad es menor (flotamos más)
         // * Con un valor igual a 0, no hay gravedad
         // * Con un valor negativo, la gravedad se invierte
-        Physics.gravity *= gravityModifier; 
+        Physics.gravity *= gravityModifier;
+
+        lives = 3;
     }
     
     void Update()
@@ -52,6 +63,9 @@ public class PlayerController : MonoBehaviour
             
             // Paramos el sistema de partículas de la tierra
             dirtParticleSystem.Stop();
+            
+            // SFX de salto
+            playerAudioSource.PlayOneShot(jumpClip, 1);
         }
         
     }
@@ -73,30 +87,53 @@ public class PlayerController : MonoBehaviour
             // Si colisionamos con un obstáculo, entonces morimos
             if (otherCollider.gameObject.CompareTag("Obstacle"))
             {
-                // Indicamos que hemos muerto
-                gameOver = true;
+                Destroy(otherCollider.gameObject);
+                
+                lives--;
+                if (lives <= 0)
+                {
+                    GameOver();
+                }
+                else
+                {
+                    playerAnimator.SetTrigger("Crash_trig");
+                }
 
-                // Desactivamos el sistema de partículas de la tierra
-                dirtParticleSystem.Stop();
-
-                // Transicionamos a la animación de muerte, de forma aleatoria
-                int randomDeath = Random.Range(1, 3);
-                playerAnimator.SetBool("Death_b", true);
-                playerAnimator.SetInteger("DeathType_int", randomDeath);
-
-
-                Vector3 offset = new Vector3(0, 1.5f, 0);
-                Instantiate(explosionParticleSystem,
-                    transform.position + offset,
-                    explosionParticleSystem.transform.rotation);
-                /*
-                ParticleSystem explosionEscena = Instantiate(explosionParticleSystem,
-                    transform.position + new Vector3(0, 1.5f, 0),
-                    explosionParticleSystem.transform.rotation);
-                explosionEscena.Play();
-                */
 
             }
         }
+    }
+
+    private void GameOver()
+    {
+        // Indicamos que hemos muerto
+        gameOver = true;
+
+        // Desactivamos el sistema de partículas de la tierra
+        dirtParticleSystem.Stop();
+
+        // Ejecutamos el sistema de partículas de explosión
+        Vector3 offset = new Vector3(0, 1.5f, 0);
+        Instantiate(explosionParticleSystem,
+            transform.position + offset,
+            explosionParticleSystem.transform.rotation);
+                
+        /*
+        ParticleSystem explosionEscena = Instantiate(explosionParticleSystem,
+            transform.position + new Vector3(0, 1.5f, 0),
+            explosionParticleSystem.transform.rotation);
+        explosionEscena.Play();
+        */
+                
+        // Transicionamos a la animación de muerte, de forma aleatoria
+        int randomDeath = Random.Range(1, 3);
+        playerAnimator.SetBool("Death_b", true);
+        playerAnimator.SetInteger("DeathType_int", randomDeath);
+                
+        // Reproducir el SFX de la explosión
+        playerAudioSource.PlayOneShot(crashClip, 1);
+                
+        // Bajar el volumen de la música de fondo
+        cameraAudioSource.volume = 0.01f;
     }
 }
