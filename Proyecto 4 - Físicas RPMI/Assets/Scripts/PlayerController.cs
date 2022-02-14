@@ -8,9 +8,9 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject powerUpIndicator;
+    //public GameObject powerUpIndicator;
     public GameObject[] powerUpIndicators;
-    public GameObject[] powerUpIndicatorsPrefab;
+    //public GameObject[] powerUpIndicatorsPrefab;
     
     private Rigidbody playerRigidbody;
     [SerializeField] private float speed = 10f;
@@ -56,23 +56,10 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < powerUpIndicators.Length; i++)
         {
-            
             // Game Object en Escena
             powerUpIndicators[i].SetActive(true);
             yield return new WaitForSeconds(2);
             powerUpIndicators[i].SetActive(false);
-            
-            
-            /*
-            // Prefab 
-            GameObject indicator = Instantiate(powerUpIndicatorsPrefab[i], transform.position,
-                powerUpIndicatorsPrefab[i].transform.rotation);
-            indicator.transform.SetParent(powerUpIndicator.transform);
-            yield return new WaitForSeconds(2);
-            Destroy(indicator.gameObject);
-            */
-            
-            
         }
         hasPowerUp = false;
     }
