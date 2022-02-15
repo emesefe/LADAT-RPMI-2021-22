@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3871892836635057614}
   - component: {fileID: 3881144743666381418}
   - component: {fileID: 3889057370497533620}
-  - component: {fileID: 6515842017698357671}
+  - component: {fileID: 6326145880253755432}
+  - component: {fileID: 8476443664283859066}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Bad
@@ -82,17 +83,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6515842017698357671
-MeshCollider:
+--- !u!65 &6326145880253755432
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3867821073191959212}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 170db210605ea844695dbbd5c2429940, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.42912173, y: 0.5520756, z: 0.46483073}
+  m_Center: {x: 0, y: -0.026736578, z: -0.023982434}
+--- !u!114 &8476443664283859066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867821073191959212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f80453c24676469698468e5a77d435c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
