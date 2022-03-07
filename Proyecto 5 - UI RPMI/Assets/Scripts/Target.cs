@@ -13,9 +13,9 @@ public class Target : MonoBehaviour
     private GameManager gameManagerScript;
     void Start()
     {
-        // Autodestrucción tras 2 segundos
-        Destroy(gameObject, lifeTime);
         gameManagerScript = FindObjectOfType<GameManager>();
+        lifeTime = gameManagerScript.spawnRate;
+        Destroy(gameObject, lifeTime);
     }
 
     private void OnMouseDown()

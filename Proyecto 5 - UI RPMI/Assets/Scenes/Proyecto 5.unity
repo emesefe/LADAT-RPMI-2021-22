@@ -350,6 +350,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237894838}
   m_CullTransparentMesh: 1
+--- !u!1 &345517788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4486967606750393229, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+  m_PrefabInstance: {fileID: 1380779101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &370722708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8950668525299617421, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+  m_PrefabInstance: {fileID: 1380779101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &370722713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370722708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e216ff759e142f4a779e67d447263e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!1 &494445611
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +526,8 @@ MonoBehaviour:
   targetPositions: []
   scoreText: {fileID: 1093942958}
   gameOverPanel: {fileID: 1930538062}
+  mainMenuPanel: {fileID: 345517788}
+  spawnRate: 2
 --- !u!4 &536619050
 Transform:
   m_ObjectHideFlags: 0
@@ -932,6 +957,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093942956}
   m_CullTransparentMesh: 1
+--- !u!1 &1167868695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1938878132452387533, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+  m_PrefabInstance: {fileID: 1380779101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1167868700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167868695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e216ff759e142f4a779e67d447263e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 2
 --- !u!1001 &1380779101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -939,6 +982,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1839006690}
     m_Modifications:
+    - target: {fileID: 296100136851484838, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296100136851484838, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 296100136851484838, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 567607411149366302, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1023,9 +1078,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996645418772386017, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_Name
+      value: Hard Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938878132452387533, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_Name
+      value: Medium Button
+      objectReference: {fileID: 0}
     - target: {fileID: 4486967606750393229, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
       propertyPath: m_Name
-      value: Panel
+      value: Main Menu Panel
       objectReference: {fileID: 0}
     - target: {fileID: 4486967606750393229, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
       propertyPath: m_IsActive
@@ -1046,6 +1109,30 @@ PrefabInstance:
     - target: {fileID: 4749073878418541232, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902161752244630599, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902161752244630599, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902161752244630599, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546668316762085393, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546668316762085393, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546668316762085393, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
@@ -1528,3 +1615,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120347543}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2144316238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 996645418772386017, guid: d85874c70a1c2455b8441eca860b3e7c, type: 3}
+  m_PrefabInstance: {fileID: 1380779101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2144316243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144316238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e216ff759e142f4a779e67d447263e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 3

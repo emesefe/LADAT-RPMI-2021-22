@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public GameObject gameOverPanel;
+    public GameObject mainMenuPanel;
 
     // Coordenadas del cuadrado inferior izquierdo
     private float minX = -3.75f;
@@ -19,30 +20,28 @@ public class GameManager : MonoBehaviour
     // Distancia entre los centros de los cuadrados (horizontal y vertical)
     private float distanceBetweenSquares = 2.5f;
 
-    private float spawnRate = 2f;
+    public float spawnRate = 2f;
     private Vector3 randomPos;
 
-    private int score = 0;
+    private int score;
     
     void Start()
     {
-        scoreText.text = $"Score: {score}";
-        gameOverPanel.SetActive(false);
-        StartCoroutine(SpawnRandomTarget());
+        mainMenuPanel.SetActive(true);
     }
 
     private Vector3 RandomSpawnPosition()
     {
         // Función que calcula una posición aleatoria en los centros de los 16 cuadrados
         
-        int SaltosX = Random.Range(0, 4);
-        int SaltosY = Random.Range(0, 4);
+        int saltosX = Random.Range(0, 4);
+        int saltosY = Random.Range(0, 4);
 
         // Partimos desde el cuadrado inferior izquierdo
         // Calculamos el desplazamiento hacia la derecha
-        float spawnPosX = minX + SaltosX * distanceBetweenSquares;
+        float spawnPosX = minX + saltosX * distanceBetweenSquares;
         // Calculamos el desplazamiento hacia arriba
-        float spawnPosY = minY + SaltosY * distanceBetweenSquares;
+        float spawnPosY = minY + saltosY * distanceBetweenSquares;
         
         return new Vector3(spawnPosX, spawnPosY, 0);
     }
@@ -88,5 +87,20 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void StartGame(int difficulty)
+    {
+        mainMenuPanel.SetActive(false);
+        
+        isGameOver = false;
+        gameOverPanel.SetActive(false);
+        
+        score = 0;
+        UpdateScore(0);
+
+        spawnRate = 2f;
+        spawnRate /= difficulty;
+        StartCoroutine(SpawnRandomTarget());
     }
 }
